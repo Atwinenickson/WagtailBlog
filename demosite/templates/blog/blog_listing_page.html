@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% load wagtailimages_tags %}
+{% block content %}
+<h1>Testing Blog Listing Page</h1>
+{% load wagtailcore_tags %}
+<section class="container">
+    <div class="row">
+        <div class="col">
+            {% for post in blogpages %}
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">{{ post.title }}</h5>
+                    <p class="card-text">{{ post.specific.intro }}</p>
+                    <a href="{% pageurl post %}" class="btn btn-primary">Read Post</a>
+                </div>
+            </div>
+            {% empty %}
+            <h2>No blog posts</h2>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}
