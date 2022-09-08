@@ -6,7 +6,8 @@ from wagtail.admin.edit_handlers import FieldPanel, StreamFieldPanel
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
 # from streamfieldblocks.models import ResponsiveImageBlock, CardBlock
-from streamfieldblocks.models import ResponsiveImageBlock, CardBlock, SimpleRichTextBlock, CarouselBlock
+from streamfieldblocks.models import ResponsiveImageBlock, CardBlock, SimpleRichTextBlock, CarouselBlock, FlushListBlock
+
 
 
 # Create your models here.
@@ -47,6 +48,7 @@ class BlogPage(Page):
     main_content = StreamField([
         ('richtext', SimpleRichTextBlock()),
         ('carousel', CarouselBlock()),
+        ('flush_list', FlushListBlock()),
         ('responsive_image', ResponsiveImageBlock()),
         ('card', CardBlock()),
     ], blank=True)
