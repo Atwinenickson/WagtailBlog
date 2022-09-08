@@ -17,4 +17,10 @@
         </div>
     </div>
 </section>
+
+<section>
+    {% for block in page.main_content %}
+      {% include_block block %}
+    {% endfor %}
+   </section>
 {% endblock %}
